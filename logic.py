@@ -1,24 +1,37 @@
-import math
+import math, random
+from datetime import datetime
+    
+def mathExercise(iterations, coinTrue, coinFalse, coinSkip, numbers, question):
+	start_time = datetime.now().replace(microsecond=0)
+	while iterations < question:
+		mathSign = random.randint(0, 2)
+		a = math.floor((random.random()) * 10)
+		b = math.floor((random.random()) * 10)
+		numbers += 1
 
-class Expressions():
-    
-    def mult(self, first, second):
-        return float(first) * float(second)
-    
-    def div(self, first, second):
-        if float(second) == 0:
-            return "Нельзя делить на ноль!"
-        elif float(first) == float(second):
-            return 1
-        else:
-            return float(first)/float(second)
-    
-    def sub(self, first, second):
-        return float(first)-float(second)
-    
-    def sub_abs(self, first, second):
-        return math.fabs(float(first)-float(second))
+		if mathSign == 0:
+			answer = input("= "+ str(numbers) + ": " + str(a) + "+" + str(b) + "= ")
+			c = a + b
+		elif mathSign == 1:
+			answer = input("= "+ str(numbers) + ": " + str(a) + "-" + str(b) + "= ")
+			c = a - b
+		elif mathSign == 2:
+			answer = input("= "+ str(numbers) + ": " + str(a) + "*" + str(b) + "= ")
+			c = a * b
 
-    def add(self, first, second):
-        return float(first) + float(second)
-
+		if not answer:
+			coinSkip += 1
+			iterations += 1
+			continue
+		else:
+			if math.fabs(int(answer)) == math.fabs(c):
+				coinTrue += 1
+			else:
+				coinFalse += 1
+				print("ОШИБКА")
+		iterations += 1
+	totalTime = ((datetime.now().replace(microsecond=0) - start_time))
+	print("====== Количество верных упражнений: " + str(coinTrue))
+	print("=== Количество НЕ верных упражнений: " + str(coinFalse))
+	print("= Количество пропущенных упражнений: " + str(coinSkip))
+	print("==== Время на выполнение упражнений: " + str(totalTime))
