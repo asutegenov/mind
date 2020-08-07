@@ -1,7 +1,9 @@
 import math, random
 from datetime import datetime
     
-def mathExercise(iterations, coinTrue, coinFalse, coinSkip, numbers, question):
+def mathExercise(iterations, coinTrue, coinFalse, coinSkip, numbers):
+	question = int(input(str("==== Cколько вы хотите выполнить заданий: ")))
+	print("==============================================")
 	start_time = datetime.now().replace(microsecond=0)
 	while iterations < question:
 		mathSign = random.randint(0, 2)
@@ -31,7 +33,9 @@ def mathExercise(iterations, coinTrue, coinFalse, coinSkip, numbers, question):
 				print("ОШИБКА")
 		iterations += 1
 	totalTime = ((datetime.now().replace(microsecond=0) - start_time))
-	print("====== Количество верных упражнений: " + str(coinTrue))
-	print("=== Количество НЕ верных упражнений: " + str(coinFalse))
-	print("= Количество пропущенных упражнений: " + str(coinSkip))
-	print("==== Время на выполнение упражнений: " + str(totalTime))
+	print("==============================================")
+	print("================== РЕЗУЛЬТАТ =================")
+	print("======== Количество верных упражнений: " + str(coinTrue))
+	print("===== Количество НЕ верных упражнений: " + str(coinFalse))
+	print("=== Количество пропущенных упражнений: " + str(coinSkip))
+	print("====== Время на выполнение упражнений: " + str(totalTime))
