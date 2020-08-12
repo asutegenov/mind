@@ -1,4 +1,5 @@
 import math, random, time
+
 from datetime import datetime
 from logic import mathExercise
 
@@ -7,10 +8,12 @@ coinFalse = 0
 coinSkip = 0
 iterations = 0
 numbers = 0
+exercise = 0
 
 print("==============================================")
 print("================== MIND v0.1 =================")
 print("==============================================")
+
 while True:
   try:
 
@@ -27,26 +30,16 @@ while True:
     print("==============================================")
 
     if num_question == 1:
-      mathExercise(iterations, coinTrue, coinFalse, coinSkip, numbers)
+      mathExercise(iterations, coinTrue, coinFalse, coinSkip, numbers, 5)
     elif num_question == 2:
-      print("**** Задание пока не готово. \n Позанимайтесь пока по Основному заданию ****")
-      print("==============================================")
-      mathExercise(iterations, coinTrue, coinFalse, coinSkip, numbers)
+      mathExercise(iterations, coinTrue, coinFalse, coinSkip, numbers, 2)
     elif num_question == 3:
-      print("**** Задание пока не готово. \n Позанимайтесь пока по Основному заданию ****")
-      print("==============================================")
-      mathExercise(iterations, coinTrue, coinFalse, coinSkip, numbers)
+      mathExercise(iterations, coinTrue, coinFalse, coinSkip, numbers, 0)
     elif num_question == 4:
-      print("**** Задание пока не готово. \n Позанимайтесь пока по Основному заданию ****")
-      print("==============================================")
-      mathExercise(iterations, coinTrue, coinFalse, coinSkip, numbers)
+      mathExercise(iterations, coinTrue, coinFalse, coinSkip, numbers, 1)
     elif num_question == 5:
-      print("**** Задание пока не готово. \n Позанимайтесь пока по Основному заданию ****")
-      print("==============================================")
       mathExercise(iterations, coinTrue, coinFalse, coinSkip, numbers)
     elif num_question == 6:
-      print("**** Задание пока не готово. \n Позанимайтесь пока по Основному заданию ****")
-      print("==============================================")
       mathExercise(iterations, coinTrue, coinFalse, coinSkip, numbers)
     elif num_question == 7:
       print("================ See you later ===============")
@@ -56,8 +49,9 @@ while True:
       print("====== ВЫ ВВЕЛИ НЕВЕРНЫЙ НОМЕР ЗАДАНИЯ! ======")
 
     print("==============================================")
+
   except ValueError:
+
     print("==============================================")
     print("========= ВВЕДИТЕ, ПОЖАЛУЙСТА, ЦИФРЫ =========")
     print("==============================================")
-

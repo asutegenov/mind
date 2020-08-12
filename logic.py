@@ -1,14 +1,27 @@
 import math, random
+
 from datetime import datetime
     
-def mathExercise(iterations, coinTrue, coinFalse, coinSkip, numbers):
+def mathExercise(iterations, coinTrue, coinFalse, coinSkip, numbers, exercise):
+
 	question = int(input(str("==== Cколько вы хотите выполнить заданий: ")))
 	print("==============================================")
 	start_time = datetime.now().replace(microsecond=0)
+
 	while iterations < question:
-		mathSign = random.randint(0, 2)
+
+		if exercise == 2:
+			mathSign = 2
+		elif exercise == 0:
+			mathSign = 0
+		elif exercise == 1:
+			mathSign = 1
+		else:
+			mathSign = random.randint(0, 2)
+
 		a = math.floor((random.random()) * 10)
 		b = math.floor((random.random()) * 10)
+
 		numbers += 1
 
 		if mathSign == 0:
@@ -31,8 +44,11 @@ def mathExercise(iterations, coinTrue, coinFalse, coinSkip, numbers):
 			else:
 				coinFalse += 1
 				print("ОШИБКА")
+
 		iterations += 1
+
 	totalTime = ((datetime.now().replace(microsecond=0) - start_time))
+	
 	print("==============================================")
 	print("================== РЕЗУЛЬТАТ =================")
 	print("======== Количество верных упражнений: " + str(coinTrue))
