@@ -26,7 +26,7 @@ while True:
     print("==== 7. Выход ================================")
     print("==============================================")
 
-    num_question = int(input("==== Выберите номер задания: "))
+    num_question = int(input("========== Выберите пункт из списка: "))
     print("==============================================")
 
     if num_question == 1:
@@ -38,9 +38,9 @@ while True:
     elif num_question == 4:
       mathExercise(iterations, coinTrue, coinFalse, coinSkip, numbers, 1)
     elif num_question == 5:
-      mathExercise(iterations, coinTrue, coinFalse, coinSkip, numbers)
+      mathExercise(iterations, coinTrue, coinFalse, coinSkip, numbers, 1)
     elif num_question == 6:
-      mathExercise(iterations, coinTrue, coinFalse, coinSkip, numbers)
+      mathExercise(iterations, coinTrue, coinFalse, coinSkip, numbers, 4)
     elif num_question == 7:
       print("================ See you later ===============")
       print("==============================================")
